@@ -20,12 +20,12 @@ for (let key in student) {
 }
 const students = {
     studenti: [
-        { nome: 'Raimondo' },
-        { cognome: 'Soffici' },
-        { nome: 'Susanna' },
-        { cognome: 'Becchi' },
-        { nome: 'Arturo' },
-        { cognome: 'Freno' },
+        { nome: 'Raimondo', cognome: 'Soffici', età: 17, },
+
+        { nome: 'Susanna', cognome: 'Becchi', età: 16, },
+
+        { nome: 'Arturo', cognome: 'Freno', età: 18, },
+
     ],
 }
 for (let i = 0; i < students.length; i++) {
