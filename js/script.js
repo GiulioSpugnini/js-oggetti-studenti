@@ -17,40 +17,68 @@ const student = {
 for (let key in student) {
 
     console.log(`${key}: ${student[key]}`);
+    result.innerText = `${student['nome']}  ${student['cognome']}  ${student['età']}`;
 }
-const students = {
-    studenti: [
-        { nome: 'Raimondo', cognome: 'Soffici', età: 17, },
+const students = [];
 
-        { nome: 'Susanna', cognome: 'Becchi', età: 16, },
 
-        { nome: 'Arturo', cognome: 'Freno', età: 18, },
-
-    ],
+const firstStudent = {
+    nome: 'Raimondo',
+    cognome: 'Soffici',
+    età: 17,
 }
+
+const secondStudent = {
+    nome: 'Susanna',
+    cognome: 'Becchi',
+    età: 16,
+}
+const thirdStudent = {
+    nome: 'Arturo',
+    cognome: 'Freno',
+    età: 18,
+}
+students.push(firstStudent);
+students.push(secondStudent);
+students.push(thirdStudent);
+
+
 console.log('STUDENTI');
+console.log(students);
 
 function printClass() {
-    for (let i = 0; i < students.studenti.length; i++) {
-        const name = students['studenti'][i];
+    for (let i = 0; i < students.length; i++) {
+        const name = students[i];
         for (let key in name) {
             console.log(`${key}: ${name[key]}`);
         }
 
     }
+    return students['studenti'];
 }
 printClass();
 
-const userName = prompt('Digita un nome');
-const userSurname = prompt('Digita un cognome');
-const userAge = prompt("Digita un' età");
+// const userName = prompt('Digita un nome');
+const userName = document.getElementById('name');
+// const userSurname = prompt('Digita un cognome');
+const userSurname = document.getElementById('surname');
+// const userAge = prompt("Digita un' età");
+const userAge = document.getElementById('age');
 
-console.log(`Nome: ${userName} Cognome: ${userSurname} Età: ${userAge}`);
-const userStudent = {
-    nome: userName,
-    cognome: userSurname,
-    età: userAge,
-}
-students.studenti.push(userStudent);
-console.log('NUOVO ARRAY CON INSERITO LO STUDENTE SCELTO DALL UTENTE');
-printClass();
+const finalStudents = document.getElementById('finalStudents');
+
+const generate = document.getElementById('generate');
+
+generate.addEventListener('click', function() {
+    console.log(`Nome: ${userName} Cognome: ${userSurname} Età: ${userAge}`);
+    const userStudent = {
+        nome: userName.value,
+        cognome: userSurname.value,
+        età: userAge.value,
+    }
+    students.studenti.push(userStudent);
+
+    console.log('NUOVO ARRAY CON INSERITO LO STUDENTE SCELTO DALL UTENTE');
+    finalStudents.innerHTML = `${printClass(students.studenti)}`;
+
+})
