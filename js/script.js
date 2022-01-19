@@ -29,10 +29,28 @@ const students = {
     ],
 }
 console.log('STUDENTI');
-for (let i = 0; i < students.studenti.length; i++) {
-    const name = students['studenti'][i];
-    for (let key in name) {
-        console.log(`${key}: ${name[key]}`);
-    }
 
+function printClass() {
+    for (let i = 0; i < students.studenti.length; i++) {
+        const name = students['studenti'][i];
+        for (let key in name) {
+            console.log(`${key}: ${name[key]}`);
+        }
+
+    }
 }
+printClass();
+
+const userName = prompt('Digita un nome');
+const userSurname = prompt('Digita un cognome');
+const userAge = prompt("Digita un' età");
+
+console.log(`Nome: ${userName} Cognome: ${userSurname} Età: ${userAge}`);
+const userStudent = {
+    nome: userName,
+    cognome: userSurname,
+    età: userAge,
+}
+students.studenti.push(userStudent);
+console.log('NUOVO ARRAY CON INSERITO LO STUDENTE SCELTO DALL UTENTE');
+printClass();
