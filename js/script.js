@@ -28,9 +28,11 @@ const students = {
 
     ],
 }
-for (let i = 0; i < students.length; i++) {
-    const studentClass = students[i];
-
-
+console.log('STUDENTI');
+for (let i = 0; i < students.studenti.length; i++) {
+    const name = students['studenti'][i];
+    for (let key in name) {
+        console.log(`${key}: ${name[key]}`);
+    }
 
 }
