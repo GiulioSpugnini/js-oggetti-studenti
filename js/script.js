@@ -19,5 +19,18 @@ for (let key in student) {
     console.log(`${key}: ${student[key]}`);
 }
 const students = {
-    studenti: ['Raimondo Soffici', 'Susanna Becchi', 'Arturo Freno'],
+    studenti: [
+        { nome: 'Raimondo' },
+        { cognome: 'Soffici' },
+        { nome: 'Susanna' },
+        { cognome: 'Becchi' },
+        { nome: 'Arturo' },
+        { cognome: 'Freno' },
+    ],
+}
+for (let i = 0; i < students.length; i++) {
+    const studentClass = students[i];
+
+
+
 }
