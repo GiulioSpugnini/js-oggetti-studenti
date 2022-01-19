@@ -18,3 +18,6 @@ for (let key in student) {
 
     console.log(`${key}: ${student[key]}`);
 }
+const students = {
+    studenti: ['Raimondo Soffici', 'Susanna Becchi', 'Arturo Freno'],
+}
