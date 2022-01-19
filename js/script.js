@@ -9,6 +9,7 @@ console.log('OK JS');
         Usiamo il DOM per stampare e chiedere le informazioni all'utente!
 */
 const result = document.getElementById('result');
+const result2 = document.getElementById('result2');
 const student = {
     nome: 'Giulio',
     cognome: 'Spugnini',
@@ -42,19 +43,18 @@ students.push(firstStudent);
 students.push(secondStudent);
 students.push(thirdStudent);
 
-
 console.log('STUDENTI');
-console.log(students);
+console.table(students);
 
 function printClass() {
     for (let i = 0; i < students.length; i++) {
         const name = students[i];
         for (let key in name) {
-            console.log(`${key}: ${name[key]}`);
+            // console.log(`${key}: ${name[key]}`);
         }
 
     }
-    return students['studenti'];
+    return students;
 }
 printClass();
 
@@ -70,15 +70,27 @@ const finalStudents = document.getElementById('finalStudents');
 const generate = document.getElementById('generate');
 
 generate.addEventListener('click', function() {
-    console.log(`Nome: ${userName} Cognome: ${userSurname} Età: ${userAge}`);
+    console.log(`Nome: ${userName.value} Cognome: ${userSurname.value} Età: ${userAge.value}`);
     const userStudent = {
         nome: userName.value,
         cognome: userSurname.value,
         età: userAge.value,
     }
-    students.studenti.push(userStudent);
+    console.log(userStudent);
+    students.push(userStudent);
+    for (let i = 0; i < students.length; i++) {
+        // Prendo ogni valore nell'array 
+        for (let key in students[i]) {
+            if (!(key === 'eta')) {
+                // Ad ogni ciclo viene creato un p
+                let info = document.createElement('p');
+                // Stampa il valore della key nell array (i)
+                let valore = students[i][key];
 
-    console.log('NUOVO ARRAY CON INSERITO LO STUDENTE SCELTO DALL UTENTE');
-    finalStudents.innerHTML = `${printClass(students.studenti)}`;
+                info.innerText = key + ': ' + valore;
+                finalStudents.appendChild(info);
+            }
+        }
+    }
 
 })
