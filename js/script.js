@@ -8,9 +8,13 @@ console.log('OK JS');
     BONUS:
         Usiamo il DOM per stampare e chiedere le informazioni all'utente!
 */
-
+const result = document.getElementById('result');
 const student = {
     nome: 'Giulio',
     cognome: 'Spugnini',
     età: 25,
+}
+for (let key in student) {
+
+    console.log(`${key}: ${student[key]}`);
 }
