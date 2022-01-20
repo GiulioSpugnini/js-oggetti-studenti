@@ -15,11 +15,13 @@ const student = {
     cognome: 'Spugnini',
     età: 25,
 }
+let content = '';
 for (let key in student) {
 
     console.log(`${key}: ${student[key]}`);
-    result.innerText = `${student['nome']}  ${student['cognome']}  ${student['età']}`;
+    content += `${key} : ${student[key]} `;
 }
+result.innerText = content;
 const students = [{
         nome: 'Raimondo',
         cognome: 'Soffici',
