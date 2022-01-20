@@ -20,28 +20,22 @@ for (let key in student) {
     console.log(`${key}: ${student[key]}`);
     result.innerText = `${student['nome']}  ${student['cognome']}  ${student['età']}`;
 }
-const students = [];
-
-
-const firstStudent = {
-    nome: 'Raimondo',
-    cognome: 'Soffici',
-    età: 17,
-}
-
-const secondStudent = {
-    nome: 'Susanna',
-    cognome: 'Becchi',
-    età: 16,
-}
-const thirdStudent = {
-    nome: 'Arturo',
-    cognome: 'Freno',
-    età: 18,
-}
-students.push(firstStudent);
-students.push(secondStudent);
-students.push(thirdStudent);
+const students = [{
+        nome: 'Raimondo',
+        cognome: 'Soffici',
+        età: 17,
+    },
+    {
+        nome: 'Susanna',
+        cognome: 'Becchi',
+        età: 16,
+    },
+    {
+        nome: 'Arturo',
+        cognome: 'Freno',
+        età: 18,
+    }
+];
 
 console.log('STUDENTI');
 console.table(students);
