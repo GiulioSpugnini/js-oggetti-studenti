@@ -64,6 +64,7 @@ const finalStudents = document.getElementById('finalStudents');
 const generate = document.getElementById('generate');
 
 generate.addEventListener('click', function() {
+    finalStudents.innerText = '';
     console.log(`Nome: ${userName.value} Cognome: ${userSurname.value} Età: ${userAge.value}`);
     const userStudent = {
         nome: userName.value,
